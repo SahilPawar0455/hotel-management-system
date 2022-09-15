@@ -6,5 +6,6 @@ public class HotelManagementMain {
         HotelManagement hotelManagement = new HotelManagement();
         hotelManagement.insertHotel();
         hotelManagement.displayHotelList();
+
     }
 }
