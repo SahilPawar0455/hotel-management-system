@@ -1,7 +1,9 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class HotelManagement {
    public static List hotelList = new ArrayList<>();
@@ -21,5 +23,9 @@ public class HotelManagement {
        for (Object hotel : hotelList) {
            System.out.println(hotel);
        }
+   }
+   public Optional cheapestHotel(){
+        Optional cheapestHotel = hotelList.stream().min(Comparator.comparing(Hotel::getRates));
+        return cheapestHotel;
    }
 }
