@@ -25,8 +25,13 @@ public class HotelManagement {
            System.out.println(hotel);
        }
    }
-   public Optional cheapestHotel(){
+   public Optional cheapestHotelWeekDay(){
         Optional cheapestHotel = hotelList.stream().min(Comparator.comparing(Hotel::getWeekRates));
         return cheapestHotel;
    }
+
+    public Object cheapestHotelWeekEndDay() {
+       Optional chepestHotel = hotelList.stream().min(Comparator.comparing(Hotel::getWeekendRates));
+       return chepestHotel;
+    }
 }
