@@ -49,4 +49,9 @@ public class HotelManagement {
         }
         return null;
     }
+
+    public Optional bestRatedHotel() {
+       Optional bestRated = hotelList.stream().max(Comparator.comparing(Hotel::getHotelRating));
+       return bestRated;
+    }
 }

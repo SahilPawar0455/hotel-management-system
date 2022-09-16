@@ -15,5 +15,6 @@ public class HotelManagementMain {
         LocalDate endDates = LocalDate.of(2022,5,29);
         System.out.println(startDates+" To "+endDates+" is a weekend day \n cheapest hotel is : "+hotelManagement.cheapestHotelWeekEndDay());
         System.out.println("Cheapest best rated hotel is  "+hotelManagement.cheapestBestRatedHotel());
+        System.out.println("Best Rated hotel is "+hotelManagement.bestRatedHotel());
     }
 }
