@@ -5,13 +5,16 @@ public class Hotel {
     public double weekRates;
     public double weekendRates;
 
+    public double hotelRating;
+
     public Hotel() {
     }
 
-    public Hotel(String hotelName, double weekRates, double weekendRates) {
+    public Hotel(String hotelName, double weekRates, double weekendRates, double hotelRating) {
         this.hotelName = hotelName;
         this.weekRates = weekRates;
         this.weekendRates = weekendRates;
+        this.hotelRating = hotelRating;
     }
 
     public String getHotelName() {
@@ -38,12 +41,21 @@ public class Hotel {
         this.weekendRates = weekendRates;
     }
 
+    public double getHotelRating() {
+        return hotelRating;
+    }
+
+    public void setHotelRating(double hotelRating) {
+        this.hotelRating = hotelRating;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
                 ", weekRates=" + weekRates +
                 ", weekendRates=" + weekendRates +
+                ", hotelRating=" + hotelRating +
                 '}';
     }
 }

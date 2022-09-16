@@ -8,17 +8,18 @@ import java.util.Optional;
 public class HotelManagement {
    public static List hotelList = new ArrayList<>();
    Hotel hotel;
-   public void addHotel(String hotelName, double weekRates, double weekendRates){
+   public void addHotel(String hotelName, double weekRates, double weekendRates,double hotelRating){
        hotel = new Hotel();
        hotel.setHotelName(hotelName);
        hotel.setWeekRates(weekRates);
        hotel.setWeekendRates(weekendRates);
+       hotel.setHotelRating(hotelRating);
        hotelList.add(hotel);
    }
    public void insertHotel(){
-       addHotel("Lakewood",110,90);
-       addHotel("Bridgewood",160,50);
-       addHotel("Ridgewood",220,150);
+       addHotel("Lakewood",110,90,3);
+       addHotel("Bridgewood",160,50,4);
+       addHotel("Ridgewood",220,150,5);
    }
    public void displayHotelList(){
        for (Object hotel : hotelList) {
