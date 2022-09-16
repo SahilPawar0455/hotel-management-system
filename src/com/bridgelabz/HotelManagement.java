@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class HotelManagement {
-   public static List hotelList = new ArrayList<>();
+   public static List<Hotel> hotelList = new ArrayList<>();
    Hotel hotel;
    public void addHotel(String hotelName, double weekRates, double weekendRates,double hotelRating){
        hotel = new Hotel();
@@ -34,5 +34,19 @@ public class HotelManagement {
     public Object cheapestHotelWeekEndDay() {
        Optional chepestHotel = hotelList.stream().min(Comparator.comparing(Hotel::getWeekendRates));
        return chepestHotel;
+    }
+    
+    public Hotel cheapestBestRatedHotel(){
+       double sumOfRatedHotel = 0;
+        for (int i = 0; i < hotelList.size(); i++) {
+           sumOfRatedHotel += hotelList.get(i).getHotelRating();
+        }
+        int averageRated = (int) (sumOfRatedHotel/(hotelList.size()));
+        for (int i = 0; i < hotelList.size(); i++) {
+            if (hotelList.get(i).getHotelRating() == averageRated){
+                return hotelList.get(i);
+            }
+        }
+        return null;
     }
 }
